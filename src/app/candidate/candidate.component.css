@@ -1,24 +1,48 @@
-/* Add some basic styling */
-div {
+/* Style for the container */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  /* Style for the candidate card */
+  .candidate-card {
+    width: 100%;
+    max-width: 400px;
     margin-bottom: 20px;
+    animation: fadeInUp 0.5s ease-in-out;
   }
   
-  img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
+  /* Add animation for the card */
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   
-  button {
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
+  /* Style for the mat-card */
+  mat-card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   }
   
-  button:hover {
-    background-color: #45a049;
+  mat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Style for the vote button */
+  button.mat-raised-button {
+    display: flex;
+    align-items: center;
+  }
+  
+  mat-icon {
+    margin-right: 5px;
   }
   

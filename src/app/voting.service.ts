@@ -25,6 +25,14 @@ export class VotingService {
     return [...this.candidates];
   }
 
+  gettingCndidates(){
+    return [...this.candidates]
+  }
+
+  gettingCandidatesUpdated(){
+    return this.candidateUpdated.asObservable();
+  }
+
   getCandidatesUpdateListener() {
     return this.candidateUpdated.asObservable();
   }
