@@ -14,9 +14,9 @@ export interface Candidate {
 export class VotingService {
 
   private candidates: Candidate[] = [
-    { id: 1, name: 'Candidate 1', photo: 'https://example.com/photo1.jpg', votes: 0 },
-    { id: 2, name: 'Candidate 2', photo: 'https://example.com/photo2.jpg', votes: 0 },
-    { id: 3, name: 'Candidate 3', photo: 'https://example.com/photo3.jpg', votes: 0 }
+    { id: 1, name: 'Candidate 1', photo: 'assets/c1.png', votes: 0 },
+    { id: 2, name: 'Candidate 2', photo: 'assets/c2.png', votes: 0 },
+    { id: 3, name: 'Candidate 3', photo: 'assets/c3.png', votes: 0 }
   ];
 
   private candidateUpdated = new Subject<Candidate[]>();
