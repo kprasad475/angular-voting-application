@@ -10,13 +10,26 @@ import { VotingService,Candidate } from '../voting.service';
 export class CandidateComponent implements OnInit,OnDestroy {
 
   candidates:Candidate[]=[];
-  private candidatesSub:Subscription
+  private candidatesSub:Subscription;
+
+  constructor(private service:VotingService){
+
+  }
 
   ngOnDestroy(): void {
-      
+    this.candidatesSub.unsubscribe();
+
   }
   ngOnInit(): void {
-      
+    this.candidates = this.service.getCandidates();
+    this.candidatesSub = this.service.getCandidatesUpdateListener()
+      .subscribe((candidates: Candidate[]) => {
+        this.candidates = candidates;
+      });
+  }
+
+  onVote(candidateId: number): void {
+    this.service.voteForCandidate(candidateId);
   }
 
 }

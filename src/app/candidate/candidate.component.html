@@ -1,1 +1,9 @@
-<p>candidate works!</p>
+<div *ngFor="let candidate of candidates">
+    <div>
+      <img [src]="candidate.photo" alt="{{ candidate.name }}">
+      <h2>{{ candidate.name }}</h2>
+      <p>Votes: {{ candidate.votes }}</p>
+      <button (click)="onVote(candidate.id)">Vote</button>
+    </div>
+  </div>
+  
